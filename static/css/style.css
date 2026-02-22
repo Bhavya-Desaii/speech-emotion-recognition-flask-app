@@ -1,0 +1,583 @@
+/* ============================================================================
+   RESET & BASE STYLES
+   ============================================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ============================================================================
+   CONTAINER
+   ============================================================================ */
+
+.container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    max-width: 600px;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* ============================================================================
+   HEADER
+   ============================================================================ */
+
+.header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 40px 30px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+/* ============================================================================
+   MAIN CONTENT
+   ============================================================================ */
+
+.main-content {
+    padding: 40px 30px;
+}
+
+/* ============================================================================
+   SECTION TITLES (NEW)
+   ============================================================================ */
+
+.section-title {
+    color: #333;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* ============================================================================
+   RECORDING SECTION
+   ============================================================================ */
+
+.recording-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.record-button-container {
+    margin-bottom: 20px;
+}
+
+.record-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 20px 40px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.record-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.6);
+}
+
+.record-button:active {
+    transform: translateY(0);
+}
+
+.record-button.recording {
+    background: #e74c3c;
+    animation: pulse 1.5s infinite;
+}
+
+.button-icon {
+    font-size: 1.5rem;
+}
+
+.button-text {
+    font-weight: 600;
+}
+
+/* ============================================================================
+   RECORDING STATUS
+   ============================================================================ */
+
+.recording-status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    background: #fff3cd;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.recording-status p {
+    color: #856404;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.pulse-animation {
+    width: 60px;
+    height: 60px;
+    background: #e74c3c;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ============================================================================
+   AUDIO INFO
+   ============================================================================ */
+
+.audio-info {
+    padding: 20px;
+    background: #d4edda;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.audio-info p {
+    color: #155724;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.play-button {
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.play-button:hover {
+    background: #218838;
+    transform: translateY(-1px);
+}
+
+/* ============================================================================
+   DIVIDER (NEW)
+   ============================================================================ */
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 40px 0;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.divider span {
+    padding: 0 20px;
+    color: #999;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* ============================================================================
+   UPLOAD SECTION (NEW)
+   ============================================================================ */
+
+.upload-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.upload-container {
+    margin-bottom: 20px;
+}
+
+.file-input {
+    display: none;
+}
+
+.upload-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 20px 40px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.upload-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.6);
+}
+
+.upload-button .button-icon {
+    font-size: 1.5rem;
+}
+
+.upload-button .button-text {
+    font-weight: 600;
+}
+
+.upload-hint {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* ============================================================================
+   FILE INFO (NEW)
+   ============================================================================ */
+
+.file-info {
+    padding: 20px;
+    background: #d4edda;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.file-info p {
+    color: #155724;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.file-info #fileName {
+    font-weight: 700;
+    color: #0c5328;
+}
+
+.upload-submit-button {
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+}
+
+.upload-submit-button:hover {
+    background: #218838;
+    transform: translateY(-1px);
+}
+
+.clear-file-button {
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.clear-file-button:hover {
+    background: #c82333;
+    transform: translateY(-1px);
+}
+
+/* ============================================================================
+   LOADING SPINNER
+   ============================================================================ */
+
+.loading-spinner {
+    text-align: center;
+    padding: 40px;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 20px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #667eea;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading-spinner p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* ============================================================================
+   RESULTS SECTION
+   ============================================================================ */
+
+.results-section {
+    text-align: center;
+}
+
+.results-section h2 {
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+}
+
+.emotion-result {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+}
+
+.emotion-icon {
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
+
+.emotion-result h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.confidence {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.confidence span {
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+/* ============================================================================
+   PROBABILITY BARS
+   ============================================================================ */
+
+.probabilities {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.probabilities h4 {
+    color: #333;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.probability-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.probability-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bar-label {
+    min-width: 80px;
+    text-align: right;
+    font-weight: 600;
+    color: #555;
+    font-size: 0.9rem;
+    text-transform: capitalize;
+}
+
+.bar-container {
+    flex: 1;
+    background: #e0e0e0;
+    border-radius: 10px;
+    height: 25px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 8px;
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* ============================================================================
+   BUTTONS
+   ============================================================================ */
+
+.try-again-button {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 15px 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.try-again-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.6);
+}
+
+/* ============================================================================
+   ERROR SECTION
+   ============================================================================ */
+
+.error-section {
+    text-align: center;
+    padding: 40px;
+    background: #f8d7da;
+    border-radius: 15px;
+}
+
+.error-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.error-section h3 {
+    color: #721c24;
+    margin-bottom: 10px;
+}
+
+.error-section p {
+    color: #721c24;
+    margin-bottom: 20px;
+}
+
+.retry-button {
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.retry-button:hover {
+    background: #c82333;
+    transform: translateY(-1px);
+}
+
+/* ============================================================================
+   FOOTER
+   ============================================================================ */
+
+.footer {
+    background: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* ============================================================================
+   UTILITY CLASSES
+   ============================================================================ */
+
+.hidden {
+    display: none !important;
+}
+
+/* ============================================================================
+   RESPONSIVE DESIGN
+   ============================================================================ */
+
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .header p {
+        font-size: 0.9rem;
+    }
+
+    .main-content {
+        padding: 30px 20px;
+    }
+
+    .emotion-icon {
+        font-size: 3rem;
+    }
+
+    .emotion-result h3 {
+        font-size: 1.5rem;
+    }
+
+    .bar-label {
+        min-width: 60px;
+        font-size: 0.8rem;
+    }
+
+    .upload-submit-button,
+    .clear-file-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        margin-top: 5px;
+    }
+}

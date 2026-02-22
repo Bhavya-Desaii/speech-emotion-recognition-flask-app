@@ -1,0 +1,8 @@
+speechenv/
+__pycache__/
+*.pyc
+logs/
+model_data/
+*.pkl
+*.sav
+.env

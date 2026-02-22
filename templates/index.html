@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speech Emotion Recognition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🎭 Speech Emotion Recognition</h1>
+            <p>Record your voice or upload an audio file!</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            
+            <!-- Recording Section -->
+            <div class="recording-section">
+                <h3 class="section-title">🎤 Record Your Voice</h3>
+                <div class="record-button-container">
+                    <button id="recordButton" class="record-button">
+                        <span class="button-icon">🎤</span>
+                        <span class="button-text">Start Recording</span>
+                    </button>
+                </div>
+
+                <!-- Recording Status -->
+                <div id="recordingStatus" class="recording-status hidden">
+                    <div class="pulse-animation"></div>
+                    <p>Recording... <span id="countdown">3</span>s</p>
+                </div>
+
+                <!-- Audio Info -->
+                <div id="audioInfo" class="audio-info hidden">
+                    <p>✓ Audio recorded successfully!</p>
+                    <button id="playButton" class="play-button">▶ Play Recording</button>
+                </div>
+            </div>
+
+            <!-- Divider (NEW) -->
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+            <!-- Upload Section (NEW) -->
+            <div class="upload-section">
+                <h3 class="section-title">📁 Upload Audio File</h3>
+                <div class="upload-container">
+                    <input type="file" id="fileInput" accept=".wav" class="file-input" />
+                    <label for="fileInput" class="upload-button">
+                        <span class="button-icon">📂</span>
+                        <span class="button-text">Choose WAV File</span>
+                    </label>
+                    <p class="upload-hint">Only .wav files accepted (max 5 MB)</p>
+                </div>
+
+                <!-- Selected File Info (NEW) -->
+                <div id="fileInfo" class="file-info hidden">
+                    <p>✓ Selected: <span id="fileName">file.wav</span></p>
+                    <button id="uploadButton" class="upload-submit-button">
+                        🚀 Analyze Emotion
+                    </button>
+                    <button id="clearFileButton" class="clear-file-button">
+                        ✕ Clear
+                    </button>
+                </div>
+            </div>
+
+            <!-- Loading Spinner -->
+            <div id="loadingSpinner" class="loading-spinner hidden">
+                <div class="spinner"></div>
+                <p>Analyzing emotion...</p>
+            </div>
+
+            <!-- Results Section -->
+            <div id="resultsSection" class="results-section hidden">
+                <h2>Results</h2>
+                
+                <!-- Main Emotion Display -->
+                <div class="emotion-result">
+                    <div class="emotion-icon" id="emotionIcon">😊</div>
+                    <h3 id="emotionName">Happy</h3>
+                    <p class="confidence">Confidence: <span id="confidence">95.5</span>%</p>
+                </div>
+
+                <!-- Probability Bars -->
+                <div class="probabilities">
+                    <h4>All Emotions:</h4>
+                    <div id="probabilityBars" class="probability-bars">
+                        <!-- Will be populated by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Try Again Button -->
+                <button id="tryAgainButton" class="try-again-button">
+                    🔄 Try Again
+                </button>
+            </div>
+
+            <!-- Error Section -->
+            <div id="errorSection" class="error-section hidden">
+                <div class="error-icon">⚠️</div>
+                <h3>Oops! Something went wrong</h3>
+                <p id="errorMessage">Please try again</p>
+                <button id="retryButton" class="retry-button">Try Again</button>
+            </div>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>Powered by Deep Learning | CREMA-D Dataset</p>
+        </footer>
+    </div>
+
+    <!-- Hidden Audio Element for Playback -->
+    <audio id="audioPlayback" style="display: none;"></audio>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
