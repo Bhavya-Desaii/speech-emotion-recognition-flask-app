@@ -84,7 +84,7 @@ pip install -r requirements.txt
 
 ### 4. Download model files
 
-Model files are not included in the repository due to size. Download `model_data.zip` from the [latest release](https://github.com/yourusername/Speech-Emotion-Recognition/releases/latest), extract it, and place it in the project root:
+Model files are not included in the repository due to size. Download `model_data.zip` from the [latest release](https://github.com/yourusername/speech-emotion-recognition-flask-app/releases/latest), extract it, and place it in the project root:
 
 ```
 Speech-Emotion-Recognition/
